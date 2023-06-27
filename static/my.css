@@ -1,0 +1,19 @@
+description {
+    display: none;
+}
+
+format {
+    display: none;
+}
+
+example-image {
+    display: none;
+}
+
+transcription {
+    display: none;
+}
+
+pre, code {
+    white-space: pre-line;
+}
