@@ -45,6 +45,29 @@ class ExampleTranscription extends HTMLElement {
     }
 }
 
+function copyToClipboard() {
+    const format = document.getElementsByTagName(
+        'format'
+    )[0].innerText.replace(/(^[^\S\r\n]+)/gm, "");
+
+    navigator.clipboard.writeText(format);
+    Toastify({
+        text: "Copied!",
+        duration: 1500,
+        // destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "green",
+        },
+        onClick: function () {
+        } // Callback after click
+    }).showToast();
+}
+
 class FormatBlock extends HTMLElement {
     constructor() {
         super();
@@ -53,6 +76,9 @@ class FormatBlock extends HTMLElement {
         content.innerHTML = `
         <h2>Format:</h2>
         <pre>${format}</pre>
+        <div class="text-center">
+            <div class="btn btn-outline-danger" onclick="copyToClipboard()">Copy Format</div>
+        </div>
         `
         this.appendChild(content);
     }
@@ -82,12 +108,21 @@ class Page extends HTMLElement {
         const pagetitle = document.getElementsByTagName('title')[0];
 
         pagetitle.innerText = `${title} - TranscribersOfReddit`;
-        
+
         const description = document.getElementsByTagName('description')[0];
         const format = document.getElementsByTagName('format')[0];
         const img = document.getElementsByTagName('example-image')[0];
         const transcription = document.getElementsByTagName('transcription')[0];
         const container = document.createElement('div');
+
+        let descriptiontext;
+
+        if (description.innerHTML === "") {
+            descriptiontext = "";
+        } else {
+            descriptiontext = "<p>" + description.innerHTML + "</p>";
+        }
+
         container.innerHTML = `
 <div class="container mt-5">
     <h1 class="text-center">${title}</h1>
@@ -102,8 +137,16 @@ class Page extends HTMLElement {
                 </div>
                 </p>
                 <p>
-                ${description.innerHTML}
+                    Please attempt to give a general idea of what the image is. Add as much detail
+                    as you feel is necessary, but be descriptive. Imagine describing it to someone
+                    who can't see the picture.
                 </p>
+                <p><strong>NOTE: The template shows how to format the content, not which order you
+                    have to follow to transcribe a post!</strong> If you're not sure where to start,
+                    give a brief overview then consider what first drew your attention; that's
+                    probably a good place to start!
+                </p>
+                ${descriptiontext}
                 <format-block
                     format="${format.innerText}"
                 >
@@ -123,6 +166,7 @@ class Page extends HTMLElement {
         this.appendChild(container);
     }
 }
+
 customElements.define('example-transcription', ExampleTranscription)
 customElements.define('format-block', FormatBlock)
 customElements.define('back-button', BackButton)
