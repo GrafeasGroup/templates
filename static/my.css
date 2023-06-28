@@ -14,6 +14,10 @@ transcription {
     display: none;
 }
 
+img-alt {
+    display: none;
+}
+
 pre, code {
     white-space: pre-line;
 }

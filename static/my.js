@@ -3,6 +3,7 @@ class ExampleTranscription extends HTMLElement {
         super();
 
         const img = this.getAttribute("img");
+        const alt = this.getAttribute("alt");
         const transcript = this.getAttribute("transcription");
 
         let content = document.createElement('div');
@@ -15,7 +16,7 @@ class ExampleTranscription extends HTMLElement {
                             <img
                                     src="${img}"
                                     class="w-100 h-100 object-cover"
-                                    alt=${transcript}
+                                    alt=${alt}
                             />
                         </a>
                     </div>
@@ -23,7 +24,7 @@ class ExampleTranscription extends HTMLElement {
                         <div class="card-body">
                             <h3 class="card-title"><em>Image Transcription</em></h3>
                             <div class="text-muted">
-                                [<em>${transcript}</em>]
+                                ${transcript}
                             </div>
                         </div>
                     </div>
@@ -31,12 +32,12 @@ class ExampleTranscription extends HTMLElement {
             </div>
             <div class="card d-flex flex-column d-sm-block d-md-none">
                 <a href=${img}>
-                    <img class="card-img-top" src=${img} alt=${transcript}/>
+                    <img class="card-img-top" src=${img} alt=${alt}/>
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title"><em>Image Transcription</em></h3>
                     <div class="text-muted">
-                        [<em>${transcript}</em>]
+                        ${transcript}
                     </div>
                 </div>
             </div>
@@ -54,7 +55,6 @@ function copyToClipboard() {
     Toastify({
         text: "Copied!",
         duration: 1500,
-        // destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`
@@ -112,6 +112,7 @@ class Page extends HTMLElement {
         const description = document.getElementsByTagName('description')[0];
         const format = document.getElementsByTagName('format')[0];
         const img = document.getElementsByTagName('example-image')[0];
+        const imageAlt = document.getElementsByTagName('img-alt')[0];
         const transcription = document.getElementsByTagName('transcription')[0];
         const container = document.createElement('div');
 
@@ -153,7 +154,8 @@ class Page extends HTMLElement {
                 </format-block>
                 <example-transcription
                     img="${img.innerText}"
-                    transcription="${transcription.innerText}"
+                    transcription="${transcription.innerHTML}"
+                    alt="${imageAlt.innerText}"
                 >
                 </example-transcription>
             </div>
