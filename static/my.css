@@ -10,9 +10,9 @@ example-image {
     display: none;
 }
 
-transcription {
-    display: none;
-}
+/*transcription {*/
+/*    display: block;*/
+/*}*/
 
 img-alt {
     display: none;

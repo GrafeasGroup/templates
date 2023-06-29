@@ -4,7 +4,9 @@ class ExampleTranscription extends HTMLElement {
 
         const img = this.getAttribute("img");
         const alt = this.getAttribute("alt");
-        const transcript = this.getAttribute("transcription");
+        // console.log(this.innerHTML);// "" in all Browsers
+        const transcript = this.innerHTML;
+        this.textContent = "";
 
         let content = document.createElement('div');
         content.innerHTML = `
@@ -16,7 +18,7 @@ class ExampleTranscription extends HTMLElement {
                             <img
                                     src="${img}"
                                     class="w-100 h-100 object-cover"
-                                    alt=${alt}
+                                    alt="${alt}"
                             />
                         </a>
                     </div>
@@ -31,8 +33,8 @@ class ExampleTranscription extends HTMLElement {
                 </div>
             </div>
             <div class="card d-flex flex-column d-sm-block d-md-none">
-                <a href=${img}>
-                    <img class="card-img-top" src=${img} alt=${alt}/>
+                <a href="${img}">
+                    <img class="card-img-top" src="${img}" alt="${alt}"/>
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title"><em>Image Transcription</em></h3>
@@ -42,7 +44,9 @@ class ExampleTranscription extends HTMLElement {
                 </div>
             </div>
         `
-        this.appendChild(content);
+        setTimeout(() => {
+            document.getElementById("transcriptionContainer").appendChild(content);
+        });
     }
 }
 
@@ -77,7 +81,7 @@ class FormatBlock extends HTMLElement {
         <h2>Format:</h2>
         <pre>${format}</pre>
         <div class="text-center">
-            <div class="btn btn-outline-danger" onclick="copyToClipboard()">Copy Format</div>
+            <div class="btn btn-secondary" onclick="copyToClipboard()">Copy Format</div>
         </div>
         `
         this.appendChild(content);
@@ -93,7 +97,7 @@ class BackButton extends HTMLElement {
             <div class="text-center">
                 <a
                         href="/images.html"
-                        class="btn btn-outline-primary text-uppercase my-5"
+                        class="btn btn-dark text-uppercase my-5"
                 >Back to Image Templates</a>
             </div>
         `
@@ -152,12 +156,7 @@ class Page extends HTMLElement {
                     format="${format.innerText}"
                 >
                 </format-block>
-                <example-transcription
-                    img="${img.innerText}"
-                    transcription="${transcription.innerHTML}"
-                    alt="${imageAlt.innerText}"
-                >
-                </example-transcription>
+                <div id="transcriptionContainer"></div>
             </div>
             <back-button></back-button>
         </div>
