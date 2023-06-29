@@ -4,9 +4,11 @@ class ExampleTranscription extends HTMLElement {
 
         const img = this.getAttribute("img");
         const alt = this.getAttribute("alt");
-        // console.log(this.innerHTML);// "" in all Browsers
+        const extraTitle = this.getAttribute("extraTitle");
         const transcript = this.innerHTML;
         this.textContent = "";
+
+        let transcriptionTitle = extraTitle ? "Image Transcription: " + extraTitle : "Image Transcription";
 
         let content = document.createElement('div');
         content.innerHTML = `
@@ -24,7 +26,7 @@ class ExampleTranscription extends HTMLElement {
                     </div>
                     <div class="col">
                         <div class="card-body">
-                            <h3 class="card-title"><em>Image Transcription</em></h3>
+                            <h3 class="card-title"><em>${transcriptionTitle}</em></h3>
                             <div class="text-muted">
                                 ${transcript}
                             </div>
@@ -37,7 +39,7 @@ class ExampleTranscription extends HTMLElement {
                     <img class="card-img-top" src="${img}" alt="${alt}"/>
                 </a>
                 <div class="card-body d-flex flex-column">
-                    <h3 class="card-title"><em>Image Transcription</em></h3>
+                    <h3 class="card-title"><em>${transcriptionTitle}</em></h3>
                     <div class="text-muted">
                         ${transcript}
                     </div>
@@ -115,9 +117,6 @@ class Page extends HTMLElement {
 
         const description = document.getElementsByTagName('description')[0];
         const format = document.getElementsByTagName('format')[0];
-        const img = document.getElementsByTagName('example-image')[0];
-        const imageAlt = document.getElementsByTagName('img-alt')[0];
-        const transcription = document.getElementsByTagName('transcription')[0];
         const container = document.createElement('div');
 
         let descriptiontext;
