@@ -137,7 +137,7 @@ class Page extends HTMLElement {
                 <p class="text-center">
                     This template extends our general guidelines. Find them below:
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary text-uppercase text-center">Guidelines</a>
+                    <a href="/templates/guidelines.html" class="btn btn-primary text-uppercase text-center">Guidelines</a>
                 </div>
                 </p>
                 <p>
