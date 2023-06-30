@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transcription Templates from TranscribersOfReddit</title>
+    <script src="../static/vendored/tabler.min.js" defer></script>
+    <link rel="stylesheet" href="../static/vendored/tabler.min.css">
+    <script src="../static/my.js" defer></script>
+    <link rel="stylesheet" href="../static/my.css">
+    <script src="../static/vendored/toastify.min.js" defer></script>
+    <link rel="stylesheet" href="../static/vendored/toastify.min.css">
+</head>
+
+<body>
+
+<description>
+    <p>
+        Only transcribe karma points and awards if it's referenced or relevant to the post (for example, a person says
+        "Wow, thanks for all the awards", or comment about the number of votes). If there are a lot of awards and you
+        don't know what they are called, add the number of awards instead (ex. 5 Reddit awards, 2 gold, 1 silver or 8
+        awards).
+    </p>
+    <ul>
+        <li>
+            If any details are missing, just state that it is <strong>Unknown Post/Redditor/Subreddit</strong>. You can
+            also use the color of the redaction as the name if they are unique colors for each user.
+        </li>
+        <li>
+            <strong>Do not write u\/Redacted, u\/Username, etc. in your transcription</strong> – these are usernames of
+            actual Redditors, and will cause your transcription to be automatically removed from certain subs that do
+            not allow personal information. If usernames are redacted, "User 1/2/3" can be used as "names" in bold
+            starting with the first redacted name.
+        </li>
+        <li>
+            "User Reports" should go underneath whatever is being reported (directly under the post or directly under
+            the comment if the comment was reported).
+        </li>
+        <li>
+            When you have to write subreddit or user names in the body of the post or comment, place a backslash before
+            the first forward slash in order to avoid mentioning or linking to the user or subreddit. For example:
+            <pre>
+                **\/r/TranscribersOfReddit**
+
+                **\/u/username**
+            </pre>
+            <p>
+                becomes
+            </p>
+            <code>
+                /r/TranscribersOfReddit
+                /u/username
+            </code>
+            <p>
+                These will still show up as a link in New Reddit, but they will not ping the sub or user.
+            </p>
+        </li>
+    </ul>
+    <p>
+        For comments, try to keep the comments nested the same way as the image shows. For each new nesting level, add
+        another `>`. If usernames are visible in the post, make sure to replace `**User 1**` etc. with the user's
+        username.
+    </p>
+</description>
+
+<format-block title="Posts">
+    **Post title**, submitted by **\/u/Redditor** to **\/r/Subreddit**
+
+    [*Description of any unusual text font, background images or color, etc.*]
+
+    Post text/content, if any.
+
+    > **User 1**
+    >
+    > Comment text.
+</format-block>
+
+<format-block title="Comments">
+    > **User 1**
+    >
+    > Comment text.
+
+    >> **User 2**
+    >>
+    >> Comment text
+
+    >>> **User 3**
+    >>>
+    >>> Comment Text
+
+    >> **User 4**
+    >>
+    >> Comment text
+
+    etc.
+</format-block>
+
+<format-block title="Comment with Reports">
+    > **User 1**
+    >
+    > Comment text.
+
+    >> **User Reports:**
+    >>
+    >> Times reported: report reason A
+    >>
+    >> Times reported: report reason B
+    >>
+    >> etc.
+</format-block>
+
+<example-transcription
+        img="../images/reddit_example1.jpg"
+        alt="Screenshot of Reddit comments, three users replying to each other. User 1: 'Looks like an Icebreakers
+            Sours container'. User 2: 'That's it! Thanks!'. User 3: 'One of my favorites, but too many gives me insane
+            gas'."
+        extraTitle="Reddit Comments"
+>
+    <p>
+        ><strong>User 1</strong><br>
+        ><br>
+        >Looks like an Icebreakers Sours container<br>
+        ><br>
+        >><strong>User 2</strong><br>
+        >><br>
+        >>That's it! Thanks!<br>
+        >><br>
+        >>><strong>User 3</strong><br>
+        >>><br>
+        >>>One of my favorites, but too many gives me insane gas<br>
+    </p>
+</example-transcription>
+
+<example-transcription
+        img="../images/reddit_example2.png"
+        alt="Screenshot of Reddit comments with two users responding to each other. u/Cloakknight: Nice job
+        u/andrewsjakkko02! u/andrewsjakkko02: The prize is freaking gold?? wow I wasn't expecting that thanks lol.
+        Also from #announcements: am I the only one who has done it yet? lol u/Cloakknight: Lol yeah you're the only
+        one"
+        extraTitle="Reddit Comments"
+>
+    <p>
+        ><strong>/u/Cloakknight</strong><br>
+        ><br>
+        >Nice job <strong>/u/andrewsjakkko02</strong>!<br>
+        ><br>
+        >><strong>/u/andrewsjakkko02</strong><br>
+        >><br>
+        >>The prize is freaking gold?? wow I wasn't expecting that thanks lol. Also from #announcements: am I the only
+        one who has done it yet? lol<br>
+        >><br>
+        >>><strong>/u/Cloakknight</strong><br>
+        >>><br>
+        >>>Lol yeah you're the only one<br>
+    </p>
+</example-transcription>
+
+<example-transcription
+        img="../images/reddit_example3.jpg"
+        alt="Photo of a child wearing a backpack. The backpack is in the shape
+                of a crewmate from 'Among Us' but has the color scheme of a Pokéball;
+                the top is red and the bottom is white with a black strip horizontally
+                through the middle. The middle part has a see-through sphere and inside
+                is a real cat."
+        extraTitle="Reddit"
+>
+    <p>
+        <strong>Horrifying images show riot cops engulfed in flames as May Day march in Paris</strong>, submitted by
+        <strong>/u/Warneral</strong>
+        to <strong>/r/ProtectAndServe</strong>
+    </p>
+    <p>
+        > <strong>User Reports: 1</strong><br>
+        ><br>
+        > 1: Pictures of pig roast make me hungry.<br>
+    </p>
+</example-transcription>
+
+<example-transcription
+        img="../images/reddit_example4.png"
+        alt="Screenshot of a Reddit mod comment asking people to stop reporting things unnecessarily. Below it is a
+            list of 90 reports on the comment, ranging from 'Spam' to 'Threatening, harassing, or inciting violence'."
+        extraTitle="Reddit"
+>
+    <p>
+        <strong>/u/Peanutbuttered</strong>
+    </p>
+    <p>
+        Yo everyone's reporting everyone up in here. Don't report people just because you disagree with them.
+    </p>
+    <p>
+        Edit: Thanks for the reporting this comment to my attention. I've reviewed my comment with myself and decided to
+        reinstate it.
+    </p>
+    <p>
+        Edit 2: Wow getting Gold for doing my job? This may be the first time I got paid as a moderator!
+    </p>
+    <p>
+        > <strong>User Reports:</strong><br>
+        > 16: Spam<br>
+        > 12: Contains obscene material<br>
+        > 11: Involuntary pornography<br>
+        > 9: &lt;no reason&lt;<br>
+        > 8: Shows death<br>
+        > 7: Threatening, harassing, or inciting violence<br>
+        > 6: Breaking reddit<br>
+        > 5: Vote manipulation<br>
+        > 5: I disagree<br>
+        > 4: Threatens, harasses, or bullies<br>
+        > 2: Disagree<br>
+        > 2: Encourages or incites violence<br>
+        > 2: I disagree<br>
+        > 2: Breaking Reddit<br>
+        > 1: Taking bribes<br>
+        > 1: you gave me a huge boner with your comment. more.<br>
+        > 1: You can't tell me what to do!<br>
+        > 1: I disagree with this comment<br>
+    </p>
+</example-transcription>
+
+<build-page title="Reddit"></build-page>
+</body>
+</html>

@@ -6,7 +6,7 @@ class ExampleTranscription extends HTMLElement {
         const alt = this.getAttribute("alt");
         const extraTitle = this.getAttribute("extraTitle");
         const transcript = this.innerHTML;
-        this.textContent = "";
+        this.innerHTML = "";
 
         let transcriptionTitle = extraTitle ? "Image Transcription: " + extraTitle : "Image Transcription";
 
@@ -77,16 +77,22 @@ function copyToClipboard() {
 class FormatBlock extends HTMLElement {
     constructor() {
         super();
-        const format = this.getAttribute("format");
         let content = document.createElement('div');
+        const format = this.innerHTML;
+        const title = this.getAttribute("title");
+        const formatTitle = title ? "Format: " + title : "Format";
+        this.innerHTML = "";
         content.innerHTML = `
-        <h2>Format:</h2>
+        <h2 class="mt-4">${formatTitle}</h2>
         <pre>${format}</pre>
         <div class="text-center">
             <div class="btn btn-secondary" onclick="copyToClipboard()">Copy Format</div>
         </div>
         `
-        this.appendChild(content);
+        setTimeout(() => {
+            document.getElementById("formatContainer").appendChild(content);
+        });
+        // this.appendChild(content);
     }
 }
 
@@ -156,10 +162,7 @@ class Page extends HTMLElement {
                 </p>
                 <hr>
                 ${descriptiontext}
-                <format-block
-                    format="${format.innerText}"
-                >
-                </format-block>
+                <div id="formatContainer"></div>
                 <div id="transcriptionContainer"></div>
             </div>
             <back-button></back-button>
