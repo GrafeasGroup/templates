@@ -128,7 +128,7 @@ class Page extends HTMLElement {
         }
 
         container.innerHTML = `
-<div class="container mt-5">
+<div class="container my-5">
     <h1 class="text-center">${title}</h1>
     <div class="row">
         <div class="col-0 col-lg-2"></div>
