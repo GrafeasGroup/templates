@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transcription Templates from TranscribersOfReddit</title>
+    <script src="../static/vendored/tabler.min.js" defer></script>
+    <link rel="stylesheet" href="../static/vendored/tabler.min.css">
+    <script src="../static/my.js" defer></script>
+    <link rel="stylesheet" href="../static/my.css">
+    <script src="../static/vendored/toastify.min.js" defer></script>
+    <link rel="stylesheet" href="../static/vendored/toastify.min.css">
+</head>
+
+<body>
+
+<description>
+    <p>
+        On platforms that support markdown, you can usually create the code formatting by using four (4) spaces at the
+        beginning of every line. Fenced code blocks do not render properly on mobile or new Reddit, but likely will on
+        platforms that have a better markdown renderer. If you are using a platform that does not support markdown, you
+        can use the html tags <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> to create the code formatting.
+    </p>
+    <p>
+        It is not usually necessary to mention the programming language or source of the code, but if it is relevant
+        within the context of the specific post, it should be included in a description before the code.
+    </p>
+</description>
+
+<format>
+    *Image Transcription: Code*
+
+    ---
+
+    [four spaces]code
+</format>
+
+<example-transcription
+        img="../images/code_example2.png"
+        alt="Image displaying multiple import statements
+            with the wrong names. Tensorflow as sns, numpy as tf, pandas as np, etc."
+        extraTitle="Code"
+>
+    <p>
+        <pre>
+            import tensorflow as sns
+            import numpy as tf
+            import pandas as np
+            import matplotlib.pyplot as pd
+            import seaborn as plt
+        </pre>
+    </p>
+</example-transcription>
+
+<build-page title="Code"></build-page>
+</body>
+</html>

@@ -150,6 +150,7 @@ class Page extends HTMLElement {
                     give a brief overview then consider what first drew your attention; that's
                     probably a good place to start!
                 </p>
+                <hr>
                 ${descriptiontext}
                 <format-block
                     format="${format.innerText}"
