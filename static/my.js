@@ -96,11 +96,15 @@ class BackButton extends HTMLElement {
 
         let content = document.createElement('div');
         content.innerHTML = `
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <a
-                        href="/images.html"
-                        class="btn btn-dark text-uppercase my-5"
+                        href="../images.html"
+                        class="btn btn-dark text-uppercase"
                 >Back to Image Templates</a>
+                <a
+                        href="../index.html"
+                        class="btn btn-outline-danger text-uppercase mt-2 mt-sm-0"
+                >Back to Home</a>
             </div>
         `
         this.appendChild(content);
@@ -137,7 +141,7 @@ class Page extends HTMLElement {
                 <p class="text-center">
                     This template extends our general guidelines. Find them below:
                 <div class="text-center">
-                    <a href="/templates/guidelines.html" class="btn btn-primary text-uppercase text-center">Guidelines</a>
+                    <a href="../guidelines.html" class="btn btn-primary text-uppercase text-center">Guidelines</a>
                 </div>
                 </p>
                 <p>
