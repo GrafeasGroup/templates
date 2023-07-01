@@ -21,6 +21,7 @@ class ExampleTranscription extends HTMLElement {
                                     src="${img}"
                                     class="w-100 h-100 object-cover"
                                     alt="${alt}"
+                                    data-bilderrahmen="gallery-${Math.floor(Math.random() * 10000)}"
                             />
                         </a>
                     </div>
@@ -36,7 +37,12 @@ class ExampleTranscription extends HTMLElement {
             </div>
             <div class="card d-flex flex-column d-sm-block d-md-none">
                 <a href="${img}">
-                    <img class="card-img-top" src="${img}" alt="${alt}"/>
+                    <img 
+                        class="card-img-top"
+                        src="${img}"
+                        alt="${alt}"
+                        data-bilderrahmen="gallery-${Math.floor(Math.random() * 10000)}"
+                    />
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title"><em>${transcriptionTitle}</em></h3>
@@ -52,11 +58,13 @@ class ExampleTranscription extends HTMLElement {
     }
 }
 
-function copyToClipboard() {
-    const format = document.getElementsByTagName(
-        'format'
-    )[0].innerText.replace(/(^[^\S\r\n]+)/gm, "");
-
+function copyToClipboard(that) {
+    let format = that.parentElement.previousElementSibling.innerHTML.replace(
+        /(^[^\S\r\n]+)/gm, ""  // fix leading spaces
+    )
+        .replaceAll('&gt;', '>')
+        .replaceAll('&lt;', '<')
+        .replaceAll('&amp;', '&');
     navigator.clipboard.writeText(format);
     Toastify({
         text: "Copied!",
@@ -86,13 +94,12 @@ class FormatBlock extends HTMLElement {
         <h2 class="mt-4">${formatTitle}</h2>
         <pre>${format}</pre>
         <div class="text-center">
-            <div class="btn btn-secondary" onclick="copyToClipboard()">Copy Format</div>
+            <div class="btn btn-secondary" onclick="copyToClipboard(this)">Copy Format</div>
         </div>
         `
         setTimeout(() => {
             document.getElementById("formatContainer").appendChild(content);
         });
-        // this.appendChild(content);
     }
 }
 
@@ -172,6 +179,18 @@ class Page extends HTMLElement {
 </div>
         `
         this.appendChild(container);
+        require(
+            [
+                '../static/vendored/bilderrahmen.umd.es5.js',
+                '../static/vendored/tabler.min.js',
+                '../static/vendored/toastify.min.js',
+            ], function (
+                module,
+                tabler,
+                toastify,
+            ) {
+                new module.Bilderrahmen({closeOnOutsideClick: true});
+            });
     }
 }
 
