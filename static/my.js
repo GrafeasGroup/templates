@@ -87,8 +87,8 @@ class FormatBlock extends HTMLElement {
         super();
         let content = document.createElement('div');
         const format = this.innerHTML;
-        const title = this.getAttribute("title");
-        const formatTitle = title ? "Format: " + title : "Format";
+        const name = this.getAttribute("name");
+        const formatTitle = name ? "Format: " + name : "Format";
         this.innerHTML = "";
         content.innerHTML = `
         <h2 class="mt-4">${formatTitle}</h2>
@@ -127,13 +127,12 @@ class BackButton extends HTMLElement {
 class Page extends HTMLElement {
     constructor() {
         super();
-        const title = this.getAttribute("title");
+        const name = this.getAttribute("name");
         const pagetitle = document.getElementsByTagName('title')[0];
 
-        pagetitle.innerText = `${title} - TranscribersOfReddit`;
+        pagetitle.innerText = `${name} - TranscribersOfReddit`;
 
         const description = document.getElementsByTagName('description')[0];
-        const format = document.getElementsByTagName('format')[0];
         const container = document.createElement('div');
 
         let descriptiontext;
@@ -146,7 +145,7 @@ class Page extends HTMLElement {
 
         container.innerHTML = `
 <div class="container my-5">
-    <h1 class="text-center">${title}</h1>
+    <h1 class="text-center">${name}</h1>
     <div class="row">
         <div class="col-0 col-lg-2"></div>
         <div class="col-12 col-lg-8">
