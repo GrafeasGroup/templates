@@ -13,124 +13,70 @@
     <script src="../static/vendored/require.min.js"></script>
 </head>
 <body>
+
 <description>
-    <p>
-        Most posts have likes or shares in the form of thumbs ups, two arrows, emojis, etc. Feel free to leave those out
-        <strong>unless</strong> it's important to the clarity of the post. For example, if the text says something like
-        "For every share I'll do [something]", it would be relevant to show how many times the post has been shared.
-    </p>
-    <p>
-        Sometimes it's hard to figure out what social media platform an image is of because of the graphical differences
-        between app/desktop versions. If you are unsure, feel free to declare it as Image Transcription: Social Media.
-    </p>
-
-    <h2>Useful Notes:</h2>
-
     <ul>
         <li>
-            Names are usually censored for privacy reasons, so instead use the color the submitter used to censor the
-            name. i.e. <strong>Red</strong>, <strong>Blue</strong>, <strong>Pink</strong>, etc. For multiple users
-            censored with the same colour, use <strong>User 1</strong>,<strong>User 2</strong>, etc. For a single user,
-            you can also use <strong>Redacted</strong> or [<em>Redacted</em>] (or similar, by formatting the word
-            "Censored"). Please DO NOT use bold with brackets like [<strong>Censored</strong>].
+            Some Tumblr posts may be posted with the old-style layout, <a
+                href="../images/tumblr_old_format_example.jpeg">appearing like this</a>, and for these posts the
+            standard format should still be used. Just remember that a new reply on the left means a new separator and
+            username before writing out the reply.
         </li>
-        <li>Check with the place you're transcribing for rules about personal information! Most <strong>do not</strong>
-            allow it. Please check to be certain!
+        <li>
+            Sometimes Tumblr will contain screenshots that appear as message bubbles, <a
+                href="../images/tumblr_message_bubbles_example.png">looking like this</a>. This is <em>not</em> an
+            "ask"; instead, please follow our <a href="../guidelines.html">guidelines on embedding</a> and simply embed
+            the content like another Tumblr post inside, by calling it a screenshot of a post reply.
         </li>
-        <li>Do <strong>not</strong> include dates or times unless these are required for the context of the content.
+        <li>
+            Do <strong>not</strong> include the <code><strong>User 1</strong> reblogged from <strong>User
+            2</strong></code> line unless it is relevant to the post.
         </li>
-        <li>Do <strong>not</strong> include Retweets, Shares, Likes, etc, unless it is truly relevant to the context
-            and/or content of the post.
-        </li>
-        <li>Make sure to tell the difference between standalone posts and replies to posts. If a post includes an
-            original tweet and a reply, use block quote <code>&gt;</code> for the reply.
-        </li>
-        <li>If the text to be transcribed includes emojis, please copy and paste the emoji into your transcription; we
-            suggest <a href="http://emojipedia.org/" target="_blank">emojipedia.org</a>. Do not describe the emoji,
-            unless it is a
-            custom emoji.
+        <li>
+            Always add hashtags in the post, as they help to provide context. Just remember to escape the \# when
+            writing in markdown, or they will show up as headers instead.
         </li>
     </ul>
-
-    <h3>How to spot a Facebook post</h3>
-
-    <ol>
-        <li>
-            If a post has text over a coloured background or something with emojis.
-        </li>
-        <li>
-            If the username says something like <code>[<em>Redacted</em>] is with you and 12 others.</code>
-        </li>
-        <li>
-            If the username says something like <code>[<em>Redacted</em>] is feeling anxious/lonely/happy/ watching
-            Star Wars.</code>
-        </li>
-    </ol>
 </description>
 
-<format-block name="Facebook">
-    *Image Transcription: Facebook*
-
-    ---
-
-    **Name of Poster**
-
-    [*Description of images, if any.*]
-
-    Text of post.
-
-    NOTE: if your post has text above an image, transcribe the text before describing the image. Transcribe the text and
-    image in the order they appear. (but "Name of the Poster" must always stay on top to avoid confusion if there are
-    several posts).
-</format-block>
-
-<format-block name="Comments and Replies">
-    *Image Transcription: Facebook Post and Comment*
+<format-block name="Tumblr">
+    *Image Transcription: Tumblr*
 
     ---
 
     **Name**
 
-    [*Description of images, if any.*]
+    Text
 
-    Text of post.
+    ---
 
-    NOTE: if your post has text above an image, transcribe the text before describing the image. Templates show how to
-    format things, not the order to follow (but "Name of the Poster" must always stay on top to avoid confusion if there
-    are several posts).
+    **Name**
 
-    > **Name of Commenter**
-    >
-    > [*Description of images, if any.*]
-    >
-    > Text of comment.
+    Text
+
+    ---
+
+    **Name**
+
+    Text
 </format-block>
 
 <example-transcription
-        img="../images/facebook_example_1.jpg"
-        alt="Screenshot of Facebook; a conversation that begins with a woman writing
-        'Things happen for a reason and only time will tell what will happen. God closes one door,
-        but opens a better one.' She's responded to by a man inviting her out to tacos, whom she
-        rebuffs by saying she has a boyfriend. The man responds saying he was taking a whole group, not just her."
+        img="../images/tumblr_example1.jpeg"
+        alt="Screenshot of Tumblr; an ask has come in from Anonymous, who writes 'It's earth day. What are you methods
+            you suggest to reduce your carbon footprint?' The blog is is-the-owl-vid-cute, who replies 'Use bamboo
+            instead of wood for your guillotines when you decide to remove the 10-20 people responsible for 90% of
+            climate change. And don't use bitcoin. Throw away trash properly. The usual.'"
 >
-    <p><strong>Pink</strong></p>
-    <p>[<em>Text on a pink background, with an illustrated neon heart.</em>]</p>
-    <p>Things happen for a reason and only time will tell what will happen. God closes one door, but opens a better one
-        🙈</p>
-    <p>&gt; <strong>Blue</strong><br>
-        &gt; Like tacos</p>
-    <p>&gt; <strong>Pink</strong><br>
-        &gt; [<em>A gif of a pixel art taco dancing</em>]</p>
-    <p>&gt; <strong>Blue</strong><br>
-        &gt; It's cool fam I'll take you out for tacos</p>
-    <p>&gt; <strong>Pink</strong><br>
-        &gt; Aww 🙈 thankyou for inviting me and my boyfriend for tacos 😄</p>
-    <p>&gt; <strong>Blue</strong><br>
-        &gt; Hell I'll buy him tacos also</p>
-    <p>&gt; <strong>Blue</strong><br>
-        &gt; Shit I'm taking a hole group it wasn't just you to begin with</p>
+    <p><em>Image Transcription: Tumblr</em></p>
+    <p>&gt; <strong>Anonymous</strong> said</p>
+    <p>&gt; It's earth day. What are you methods you suggest to reduce your carbon footprint?</p>
+    <p><strong>is-the-owl-vid-cute</strong></p>
+    <p>Use bamboo instead of wood for your guillotines when you decide to remove the 10-20 people responsible for 90% of
+        climate change.</p>
+    <p>And don't use bitcoin. Throw away trash properly. The usual.</p>
 </example-transcription>
 
-<build-page name="Social Media: Facebook"></build-page>
+<build-page name="Social Media: Tumblr"></build-page>
 </body>
 </html>
