@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transcription Templates from TranscribersOfReddit</title>
+    <link rel="stylesheet" href="../static/vendored/tabler.min.css">
+    <script src="../static/my.js" defer></script>
+    <link rel="stylesheet" href="../static/my.css">
+    <link rel="stylesheet" href="../static/vendored/toastify.min.css">
+    <link href="../static/vendored/bilderrahmen.css" rel="stylesheet"/>
+    <script src="../static/vendored/require.min.js"></script>
+</head>
+
+<body>
+
+<description>
+    <ul>
+        <li>
+            Most Quora posts have a username, location, and a status. If they don't, leave them out. If they are blurred out,
+            replace them with [Redacted] or [Unknown]
+        </li>
+        <li>
+            Dates can be left out unless they are relevant to the context of the post.
+        </li>
+        <li>
+            Treat responses to questions like post replies, and add a level of indentation.
+        </li>
+    </ul>
+</description>
+
+<format-block>
+    *Image Transcription: Quora*
+
+    ---
+
+    **Post title**
+
+    >**Username**, Title/Location, *Status* (if there is one)
+    >
+    >Post text/content, if any.  
+</format-block>
+
+<example-transcription
+        img="../images/quora_example.jpg"
+        alt="Screenshot of a Quora question and answer. The question is 'When I was 4, my sister was 2. I am 44. How old is my sister?'. It
+        was answered by someone called Samuel Lipoff who studied at Harvard University, according to their Quora status. Their answer to
+        the question is 'This is a tough one. She might be 42, but she could be 41 or 43 also, since you don't say when your birthday is and her
+        birthday is. Also, she could be dead. Finally, you might have thought she was your sister but actually your mom had an
+        affair with another man and the woman who is 1-3 younger than you is not actually your sister. But your mom may have
+        given away your real sister for adoption, in which case she's probably older than you. See why it's tough? Finally, what if you think your
+        sister is dead, but she actually has become an astronaut on a secret government project for near light-speed travel? Then your sister would
+        be aging more slowly than you, so she could potentially be even younger than 41.'"
+        extraTitle="Quora"
+>
+    <p>
+        <strong>When I was 4, my sister was 2. I am 44. How old is my sister?</strong><br>
+    </p>
+    <p>
+        ><strong>Samuel Lipoff</strong>, studied at Harvard University<br>
+        ><br>
+        >This is a tough one. She might be 42, but she could be 41 or 43 also, since you don't say when your birthday is and her
+        birthday is. Also, she could be dead. Finally, you might have thought she was your sister but actually your mom had an
+        affair with another man and the woman who is 1-3 younger than you is not actually your sister. But your mom may have
+        given away your real sister for adoption, in which case she's probably older than you. See why it's tough?<br>
+        ><br>
+        >Finally, what if you think your sister is dead, but she actually has become an astronaut on a secret government project
+        for near light-speed travel? Then your sister would be aging more slowly than you, so she could potentially be even
+        younger than 41.<br>
+    </p> 
+</example-transcription>
+
+<build-page name="Quora"></build-page>
+</body>
+</html>
