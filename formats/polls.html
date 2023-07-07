@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transcription Templates from TranscribersOfReddit</title>
+    <link rel="stylesheet" href="../static/vendored/tabler.min.css">
+    <script src="../static/my.js" defer></script>
+    <link rel="stylesheet" href="../static/my.css">
+    <link rel="stylesheet" href="../static/vendored/toastify.min.css">
+    <link href="../static/vendored/bilderrahmen.css" rel="stylesheet"/>
+    <script src="../static/vendored/require.min.js"></script>
+</head>
+
+<body>
+
+<description>
+    <ul>
+        <li>
+            There are many different formats and ways to show polls online. If the exact format is not
+            shown here, use your best judgement - the main goal is to make the poll obvious to accessibility
+            readers. If the percentage is at the beginning of each option, feel free to move the formatting around.
+        </li>
+        <li>
+            If it's obvious that the OP voted, try to indicate that as well
+        </li>
+    </ul>
+</description>
+
+<format-block name="Single Selection">
+    *Image Transcription: Poll*
+
+    ---
+    
+    **Poll Question**
+    
+    [*Selected*] Option 1
+    
+    [*Unselected*] Option 2
+    
+    [*Unselected*] Option 3
+</format-block>
+
+<format-block name="Multi-Selection">
+    *Image Transcription: Poll*
+
+    ---
+    
+    **Poll Question**
+    
+    [*Selected*] Option 1
+    
+    [*Selected*] Option 2
+    
+    [*Unselected*] Option 3
+</format-block>
+
+<format-block name="Number of Votes">
+    *Image Transcription: Poll*
+
+    ---
+    
+    **Poll Question**
+    
+    Option 1 [*X Votes, checkmark to indicate OP voted for this option*]
+    
+    Option 2 [*X Votes*]
+    
+    Option 3 [*X Votes*]
+</format-block>
+
+<format-block name="Shaded Boxes">
+    *Image Transcription: Poll*
+
+    ---
+    
+    **Poll Question**
+    
+    Option 1 [*Option box is shaded to indicate that this option is in the lead*]
+    
+    Option 2 [*Option box is shaded to indicate that this option is in second place*]
+    
+    Option 3 [*Option box is shaded to indicate that this option is in third place/tied with second*]
+</format-block>
+
+<format-block name="Percentages">
+    *Image Transcription: Poll*
+
+    ---
+    
+    **Poll Question**
+    
+    Option 1 [*57%*]
+    
+    Option 2 [*43%*]
+</format-block>
+
+
+<build-page name="Polls"></build-page>
+</body>
+</html>
